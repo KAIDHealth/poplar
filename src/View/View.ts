@@ -417,6 +417,7 @@ export class View {
   }
 
   get paddingLeft(): number {
+    if (this.store.labelCategoryRepo.length <= 0) return 0; // return 0 if category is empty
     return (
       Math.max(...Array.from(this.store.labelCategoryRepo.values()).map((it) => this.labelFont.widthOf(it.text))) / 2 +
       1 /* stroke */

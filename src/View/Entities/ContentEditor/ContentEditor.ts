@@ -188,7 +188,7 @@ export class ContentEditor {
     this.hiddenTextAreaElement.setAttribute('autocapitalize', 'off');
     this.hiddenTextAreaElement.setAttribute('spellcheck', 'false');
     this.hiddenTextAreaElement.classList.add(...this.view.config.contentClasses);
-    this.hiddenTextAreaElement.style.position = 'absolute';
+    this.hiddenTextAreaElement.style.position = 'fixed';
     this.hiddenTextAreaElement.style.padding = '0';
     this.hiddenTextAreaElement.style.width = '100vw';
     this.hiddenTextAreaElement.style.height = '1em';

@@ -158,14 +158,15 @@ export class ContentEditor {
     if (selectionInfo.type !== 'Caret') {
       return;
     }
-    let clientRect = document.querySelector('svg')!.getClientRects()[0];
+    // slightly better way to find the annotation svg
+    let clientRect = document.querySelector('svg text')!.closest('svg')!.getClientRects()[0];
     if (selectionInfo.anchorNode!.parentNode !== null) {
       let characterInfo = (selectionInfo.anchorNode!.parentNode as SVGTSpanElement).getExtentOfChar(0);
       let lineY = clientRect.top + characterInfo.y;
       if (lineY + this.view.contentFont.lineHeight <= y) {
         const lineEntity = (
           selectionInfo.anchorNode!.parentNode.nextSibling as any as { annotatorElement: Line.ValueObject }
-        ).annotatorElement;
+        )?.annotatorElement;
         this._lineIndex = this.view.lines.indexOf(lineEntity);
         this.characterIndex = 0;
         this.avoidInLabel('forward');

@@ -315,7 +315,9 @@ export class View {
     } else {
       this.rerenderLines(startInLineIndex, hardLineEndInIndex);
     }
-    View.layoutTopContextsAfter(this.lines[hardLineEndInIndex - 1]);
+    if (hardLineEndInIndex > 0) {
+      View.layoutTopContextsAfter(this.lines[hardLineEndInIndex - 1]);
+    }
     const asArray = Array.from(removed);
     const removedLineCount = asArray.filter((it) => it === '\n').length;
     if (removedLineCount === 0) {

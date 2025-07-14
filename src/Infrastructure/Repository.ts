@@ -2,7 +2,7 @@ import { EventEmitter } from 'events';
 import { assert } from './Assert';
 
 export namespace Base {
-  export class Repository<T> extends EventEmitter {
+  export class Repository<T extends object> extends EventEmitter {
     protected entities = new Map<number, T>();
     private nextId = 0;
 

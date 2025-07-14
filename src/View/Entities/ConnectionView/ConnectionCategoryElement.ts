@@ -38,7 +38,7 @@ export namespace ConnectionCategoryElement {
   }
 
   export class FactoryRepository extends Base.Repository<Factory> {
-    constructor(view: View, private config: Config) {
+    constructor(view: View, config: Config) {
       super();
       for (let entity of view.store.connectionCategoryRepo.values()) {
         super.add(new Factory(entity, view.connectionFont, config.connectionClasses));

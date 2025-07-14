@@ -12,7 +12,7 @@ export class TwoLabelsClickedHandler {
   lastSelection: Option<LabelView.Entity> = none;
   svgElement: SVGPathElement;
 
-  constructor(public root: Annotator, private config: Config) {
+  constructor(public root: Annotator, config: Config) {
     this.svgElement = document.createElementNS(SVGNS, 'path');
     this.svgElement.classList.add(...root.view.config.connectionClasses.map((it) => it + '-line'));
     this.svgElement.setAttribute('fill', 'none');

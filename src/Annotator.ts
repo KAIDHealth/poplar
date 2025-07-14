@@ -14,7 +14,7 @@ export class Annotator extends EventEmitter {
   readonly textSelectionHandler: TextSelectionHandler;
   readonly twoLabelsClickedHandler: TwoLabelsClickedHandler;
 
-  constructor(data: string | object, private containerElement: HTMLElement, public readonly configInput?: ConfigInput) {
+  constructor(data: string | object, containerElement: HTMLElement, public readonly configInput?: ConfigInput) {
     super();
     const config = parseInput(configInput || {});
     this.store = new Store(config);

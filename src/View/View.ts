@@ -178,6 +178,7 @@ export class View {
       viewEntity.lineIn.update();
       View.layoutTopContextsAfter(viewEntity.lineIn);
       if (this.config.contentEditable) this.contentEditor.update();
+      this.svgElement.style.height = this.height.toString() + 'px';
     });
     this.store.connectionRepo.on('created', this.onConnectionCreated.bind(this));
     this.store.connectionRepo.on('removed', (connection: ConnectionView.Entity) => {

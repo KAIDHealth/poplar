@@ -1,6 +1,6 @@
 {
   "name": "@kaid-health/poplar-annotation",
-  "version": "2.0.3",
+  "version": "1.0.0-kaid",
   "description": "web-based annotation tool for natural language processing (NLP) needs, inspired by brat rapid annotation tool.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
